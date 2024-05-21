@@ -1,0 +1,37 @@
+Analizador Lexico
+Autor: Guillermo Fernandez
+Gramatica = SNT
+: = ST
+Prueba = SNT
+
+ = EOL
+{ = ST
+
+ = EOL
+F = SNT
+-> = Flecha
+A = SNT
+
+ = EOL
+A = SNT
+-> = Flecha
+B = SNT
+C = SNT
+
+ = EOL
+B = SNT
+-> = Flecha
+include = ST
+
+ = EOL
+C = SNT
+-> = Flecha
+< = ST
+Identificador = SNT
+. = ST
+h = ST
+> = ST
+
+ = EOL
+} = ST
+￿ = ST

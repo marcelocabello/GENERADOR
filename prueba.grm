@@ -1,0 +1,7 @@
+Gramatica: Prueba
+{
+    F-> A 
+    A -> (B C)?
+    B -> include
+    C -> <Identificador.h>
+}

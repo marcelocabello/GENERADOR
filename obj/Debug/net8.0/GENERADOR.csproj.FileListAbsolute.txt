@@ -1,0 +1,14 @@
+/home/olecram/GENERADOR/obj/Debug/net8.0/GENERADOR.GeneratedMSBuildEditorConfig.editorconfig
+/home/olecram/GENERADOR/obj/Debug/net8.0/GENERADOR.AssemblyInfoInputs.cache
+/home/olecram/GENERADOR/obj/Debug/net8.0/GENERADOR.AssemblyInfo.cs
+/home/olecram/GENERADOR/obj/Debug/net8.0/GENERADOR.csproj.CoreCompileInputs.cache
+/home/olecram/GENERADOR/bin/Debug/net8.0/GENERADOR
+/home/olecram/GENERADOR/bin/Debug/net8.0/GENERADOR.deps.json
+/home/olecram/GENERADOR/bin/Debug/net8.0/GENERADOR.runtimeconfig.json
+/home/olecram/GENERADOR/bin/Debug/net8.0/GENERADOR.dll
+/home/olecram/GENERADOR/bin/Debug/net8.0/GENERADOR.pdb
+/home/olecram/GENERADOR/obj/Debug/net8.0/GENERADOR.dll
+/home/olecram/GENERADOR/obj/Debug/net8.0/refint/GENERADOR.dll
+/home/olecram/GENERADOR/obj/Debug/net8.0/GENERADOR.pdb
+/home/olecram/GENERADOR/obj/Debug/net8.0/GENERADOR.genruntimeconfig.cache
+/home/olecram/GENERADOR/obj/Debug/net8.0/ref/GENERADOR.dll
