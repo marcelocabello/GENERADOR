@@ -15,8 +15,11 @@ A = SNT
  = EOL
 A = SNT
 -> = Flecha
+( = ST
 B = SNT
 C = SNT
+) = ST
+? = ST
 
  = EOL
 B = SNT

@@ -12,3 +12,4 @@
 /home/olecram/GENERADOR/obj/Debug/net8.0/GENERADOR.pdb
 /home/olecram/GENERADOR/obj/Debug/net8.0/GENERADOR.genruntimeconfig.cache
 /home/olecram/GENERADOR/obj/Debug/net8.0/ref/GENERADOR.dll
+/home/olecram/GENERADOR/obj/Debug/net8.0/GENERADOR.sourcelink.json

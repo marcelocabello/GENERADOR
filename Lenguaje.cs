@@ -32,7 +32,7 @@ namespace GENERADOR
             match(Tipos.EOL);
             match("{");
             match(Tipos.EOL);
-            
+
             lenguaje.WriteLine("using System;");
             lenguaje.WriteLine("using System.Collections;");
             lenguaje.WriteLine("using System.Collections.Generic;");
@@ -57,7 +57,43 @@ namespace GENERADOR
             lenguaje.WriteLine("");
             lenguaje.WriteLine("");
             match("}");
+
+            program.WriteLine("using System;");
+program.WriteLine("using System.Collections.Generic;");
+program.WriteLine("using System.Linq;");
+program.WriteLine("using System.Threading.Tasks;");
+program.WriteLine("\n");
+program.WriteLine("namespace GENERADO");
+program.WriteLine("{");
+program.WriteLine("    class Program");
+program.WriteLine("    {");
+program.WriteLine("        static void Main(string[] args) ");
+program.WriteLine("       {");
+program.WriteLine("            try");
+program.WriteLine("            {");
+program.WriteLine("                using (Lenguaje L = new Lenguaje())");
+program.WriteLine("                {");
+program.WriteLine("                    L.Gramatica();");
+program.WriteLine("                    /*");
+program.WriteLine("                    while (!L.FinArchivo())");
+program.WriteLine("                    {");
+program.WriteLine("                        L.nextToken();");
+program.WriteLine("                    }");
+program.WriteLine("                    */");
+program.WriteLine("                }");
+program.WriteLine("            } ");
+program.WriteLine("            catch (Exception e)");
+program.WriteLine("            {");
+program.WriteLine("                Console.WriteLine(\"Error\" +e.Message);");
+program.WriteLine("            }");
+program.WriteLine("        }");
+program.WriteLine("    }");
+program.WriteLine("}");
+
         }
+
+
+
         private void ListaProducciones()
         {
             Produccion();
@@ -70,13 +106,13 @@ namespace GENERADOR
         {
             if (primermetodo)
             {
-                lenguaje.WriteLine("        public void "+getContenido()+"()");
+                lenguaje.WriteLine("        public void " + getContenido() + "()");
                 lenguaje.WriteLine("        {");
                 primermetodo = false;
             }
             else
             {
-                lenguaje.WriteLine("        private void "+getContenido()+"()");
+                lenguaje.WriteLine("        private void " + getContenido() + "()");
                 lenguaje.WriteLine("        {");
             }
             match(Tipos.SNT);
@@ -87,7 +123,7 @@ namespace GENERADOR
         }
         private bool esTipo(string tipo)
         {
-            switch(tipo)
+            switch (tipo)
             {
                 case "Identificador":
                 case "Numero":
@@ -114,18 +150,18 @@ namespace GENERADOR
         {
             if (getClasificacion() == Tipos.ST)
             {
-                lenguaje.WriteLine("            match(\""+getContenido()+"\");");
+                lenguaje.WriteLine("            match(\"" + getContenido() + "\");");
                 match(Tipos.ST);
             }
             else
             {
                 if (esTipo(getContenido()))
                 {
-                    lenguaje.WriteLine("            match(Tipos."+getContenido()+");");
+                    lenguaje.WriteLine("            match(Tipos." + getContenido() + ");");
                 }
                 else
                 {
-                    lenguaje.WriteLine("            "+getContenido()+"();");
+                    lenguaje.WriteLine("            " + getContenido() + "();");
                 }
                 match(Tipos.SNT);
             }
