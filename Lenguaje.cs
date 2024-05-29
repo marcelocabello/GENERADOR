@@ -146,16 +146,11 @@ namespace GENERADOR
         }
         private void ListaSimbolos()
         {
-            if (getClasificacion() == Tipos.Epsilon)
-            {
-                lenguaje.WriteLine("            // epsilon");
-            }
-            else if (getClasificacion() == Tipos.ST)
+            if (getClasificacion() == Tipos.ST)
             {
                 lenguaje.WriteLine("            match(\"" + getContenido() + "\");");
                 match(Tipos.ST);
             }
-
             else
             {
                 if (esTipo(getContenido()))
@@ -168,7 +163,6 @@ namespace GENERADOR
                 }
                 match(Tipos.SNT);
             }
-
             if (getClasificacion() == Tipos.SNT || getClasificacion() == Tipos.ST || getClasificacion() == Tipos.Pipe)
             {
                 ListaSimbolos();

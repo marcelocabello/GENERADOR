@@ -8,5 +8,48 @@ Prueba = SNT
 { = ST
 
  = EOL
-\ = EOL
-Error de Sintaxis: Se espera un SNT (\) en la linea 2
+F = SNT
+-> = Flecha
+W = SNT
+| = ST
+
+ = EOL
+Q = SNT
+-> = Flecha
+( = ST
+B = SNT
+| = ST
+D = SNT
+) = ST
+? = ST
+/ = ST
+/ = ST
+cuando = ST
+tienes = ST
+esto = ST
+poner = ST
+en = ST
+una = ST
+lista = ST
+en = ST
+forma = ST
+agrupamiento = ST
+
+ = EOL
+E = SNT
+-> = Flecha
+includes = ST
+
+ = EOL
+C = SNT
+-> = Flecha
+< = ST
+Identificador = SNT
+. = ST
+h = ST
+> = ST
+
+ = EOL
+} = ST
+
+ = EOL
