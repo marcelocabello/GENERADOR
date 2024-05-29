@@ -155,6 +155,7 @@ namespace GENERADOR
                 if (char.IsUpper(getContenido()[0]))
                 {
                     setClasificacion(Tipos.SNT);
+                    
                 }
             }
             log.WriteLine(getContenido() + " = " + getClasificacion());

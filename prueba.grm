@@ -1,7 +1,8 @@
 Gramatica: Prueba
 {
-    F-> A 
-    A -> (B C)?
-    B -> include
+    |
+    F -> W
+    Q -> \(B | D)\? //cuando tienes esto poner en una lista en forma agrupamiento
+    E -> includes
     C -> <Identificador.h>
 }

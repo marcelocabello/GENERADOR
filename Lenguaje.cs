@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 /*
     Requerimiento 1: Todos los métodos son privados excepto el primero: CUMPLIDO
     Requerimiento 2: Es necesario generar un Program.cs para invocar el 
-    primer metdo
+    primer metdo: CUMPLIDO
     Requerimiento 3: Incluir la cerradura epsilon
-    Requerimiento 4: Incluir el operador OR
+    Requerimiento 4: Incluir el operador = AYVA
 */
 namespace GENERADOR
 {
@@ -59,40 +59,38 @@ namespace GENERADOR
             match("}");
 
             program.WriteLine("using System;");
-program.WriteLine("using System.Collections.Generic;");
-program.WriteLine("using System.Linq;");
-program.WriteLine("using System.Threading.Tasks;");
-program.WriteLine("\n");
-program.WriteLine("namespace GENERADO");
-program.WriteLine("{");
-program.WriteLine("    class Program");
-program.WriteLine("    {");
-program.WriteLine("        static void Main(string[] args) ");
-program.WriteLine("       {");
-program.WriteLine("            try");
-program.WriteLine("            {");
-program.WriteLine("                using (Lenguaje L = new Lenguaje())");
-program.WriteLine("                {");
-program.WriteLine("                    L.Gramatica();");
-program.WriteLine("                    /*");
-program.WriteLine("                    while (!L.FinArchivo())");
-program.WriteLine("                    {");
-program.WriteLine("                        L.nextToken();");
-program.WriteLine("                    }");
-program.WriteLine("                    */");
-program.WriteLine("                }");
-program.WriteLine("            } ");
-program.WriteLine("            catch (Exception e)");
-program.WriteLine("            {");
-program.WriteLine("                Console.WriteLine(\"Error\" +e.Message);");
-program.WriteLine("            }");
-program.WriteLine("        }");
-program.WriteLine("    }");
-program.WriteLine("}");
+            program.WriteLine("using System.Collections.Generic;");
+            program.WriteLine("using System.Linq;");
+            program.WriteLine("using System.Threading.Tasks;");
+            program.WriteLine("\n");
+            program.WriteLine("namespace GENERADO");
+            program.WriteLine("{");
+            program.WriteLine("    class Program");
+            program.WriteLine("    {");
+            program.WriteLine("        static void Main(string[] args) ");
+            program.WriteLine("       {");
+            program.WriteLine("            try");
+            program.WriteLine("            {");
+            program.WriteLine("                using (Lenguaje L = new Lenguaje())");
+            program.WriteLine("                {");
+            program.WriteLine("                    L.Gramatica();");
+            program.WriteLine("                    /*");
+            program.WriteLine("                    while (!L.FinArchivo())");
+            program.WriteLine("                    {");
+            program.WriteLine("                        L.nextToken();");
+            program.WriteLine("                    }");
+            program.WriteLine("                    */");
+            program.WriteLine("                }");
+            program.WriteLine("            } ");
+            program.WriteLine("            catch (Exception e)");
+            program.WriteLine("            {");
+            program.WriteLine("                Console.WriteLine(\"Error\" +e.Message);");
+            program.WriteLine("            }");
+            program.WriteLine("        }");
+            program.WriteLine("    }");
+            program.WriteLine("}");
 
         }
-
-
 
         private void ListaProducciones()
         {
@@ -148,11 +146,16 @@ program.WriteLine("}");
         }
         private void ListaSimbolos()
         {
-            if (getClasificacion() == Tipos.ST)
+            if (getClasificacion() == Tipos.Epsilon)
+            {
+                lenguaje.WriteLine("            // epsilon");
+            }
+            else if (getClasificacion() == Tipos.ST)
             {
                 lenguaje.WriteLine("            match(\"" + getContenido() + "\");");
                 match(Tipos.ST);
             }
+
             else
             {
                 if (esTipo(getContenido()))
@@ -165,16 +168,13 @@ program.WriteLine("}");
                 }
                 match(Tipos.SNT);
             }
-            if (getClasificacion() == Tipos.SNT || getClasificacion() == Tipos.ST)
+
+            if (getClasificacion() == Tipos.SNT || getClasificacion() == Tipos.ST || getClasificacion() == Tipos.Pipe)
             {
                 ListaSimbolos();
             }
+            
         }
-        private void OR()
-        {
-            match(Tipos.Pipe);
-            match(Tipos.SNT);
-            match(Tipos.Pipe);
-        }
+
     }
 }
