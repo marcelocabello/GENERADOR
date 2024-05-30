@@ -107,8 +107,8 @@ namespace GENERADOR
             switch (estado)
             {
                 case 2: setClasificacion(Tipos.Epsilon); break;
-                case 3: setClasificacion(Tipos.PDerecho); break;
-                case 4: setClasificacion(Tipos.PIzquierdo); break;
+                case 4: setClasificacion(Tipos.PDerecho); break;
+                case 3: setClasificacion(Tipos.PIzquierdo); break;
                 case 5: setClasificacion(Tipos.Pipe); break;
                 case 6: setClasificacion(Tipos.EOL); break;
                 case 7: 

@@ -2,7 +2,7 @@ Gramatica: Prueba
 {
     D-> P
     F -> W\|U\|Y\|T
-    Q -> V //cuando tienes esto poner en una lista en forma agrupamiento
-    E -> include
+    Q -> V 
+    E -> \?
     C -> <Identificador.h>
 }

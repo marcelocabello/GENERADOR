@@ -9,7 +9,7 @@ namespace GENERADOR
     {
         public enum Tipos
         {
-            Epsilon, PDerecho, PIzquierdo, Pipe, EOL, ST, SNT, Flecha
+            Epsilon, Pderecho, Pizquierdo, Pipe, EOL, ST, SNT, Flecha, PDerecho, PIzquierdo
         }
         private string contenido;
         private Tipos  clasificacion;

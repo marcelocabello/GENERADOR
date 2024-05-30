@@ -18,6 +18,7 @@ namespace GENERADOR
     public class Lenguaje : Sintaxis
     {
         bool primermetodo = true;
+        private List<string> produccionesEpsilon = new List<string>();
         public Lenguaje()
         {
         }
@@ -167,27 +168,45 @@ namespace GENERADOR
                 ListaSimbolos();
                 lenguaje.WriteLine("            }");
             }
-           
-            else
+            /*else if (getClasificacion() == Tipos.PIzquierdo)
             {
-                if (esTipo(getContenido()))
+                match(Tipos.PIzquierdo);
+                // Verificar si hay un patrón de epsilon
+                string contenido = getContenido();
+                match(getClasificacion());
+                match(Tipos.PDerecho);
+                // Si después del paréntesis derecho hay un '?', lo tratamos como epsilon
+                if (getClasificacion() == Tipos.Epsilon)
                 {
-                    lenguaje.WriteLine("            match(Tipos." + getContenido() + ");");
-
+                    match(Tipos.Epsilon);
+                    string epsilonProduccion = "            match(Tipos." + contenido + ");";
+                    produccionesEpsilon.Add(epsilonProduccion);
+                    lenguaje.WriteLine(epsilonProduccion);
                 }
+                */
+
+
+
                 else
                 {
-                    lenguaje.WriteLine("            " + getContenido() + "();");
+                    if (esTipo(getContenido()))
+                    {
+                        lenguaje.WriteLine("            match(Tipos." + getContenido() + ");");
+
+                    }
+                    else
+                    {
+                        lenguaje.WriteLine("            " + getContenido() + "();");
+
+                    }
+                    match(Tipos.SNT);
 
                 }
-                match(Tipos.SNT);
 
-            }
-
-            if (getClasificacion() == Tipos.SNT || getClasificacion() == Tipos.ST || getClasificacion() == Tipos.Pipe)
-            {
-                ListaSimbolos();
+                if (getClasificacion() == Tipos.SNT || getClasificacion() == Tipos.ST || getClasificacion() == Tipos.Pipe)
+                {
+                    ListaSimbolos();
+                }
             }
         }
     }
-}

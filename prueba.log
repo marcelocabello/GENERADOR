@@ -27,34 +27,9 @@ T = SNT
 Q = SNT
 -> = Flecha
 V = SNT
-/ = ST
-/ = ST
-cuando = ST
-tienes = ST
-esto = ST
-poner = ST
-en = ST
-una = ST
-lista = ST
-en = ST
-forma = ST
-agrupamiento = ST
 
  = EOL
 E = SNT
 -> = Flecha
-include = ST
-
- = EOL
-C = SNT
--> = Flecha
-< = ST
-Identificador = SNT
-. = ST
-h = ST
-> = ST
-
- = EOL
-} = ST
-
- = EOL
+\? = Epsilon
+Error de Sintaxis: Se espera un SNT (\?) en la linea 5
