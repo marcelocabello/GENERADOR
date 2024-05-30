@@ -8,20 +8,25 @@ Prueba = SNT
 { = ST
 
  = EOL
+D = SNT
+-> = Flecha
+P = SNT
+
+ = EOL
 F = SNT
 -> = Flecha
 W = SNT
-| = ST
+\| = Pipe
+U = SNT
+\| = Pipe
+Y = SNT
+\| = Pipe
+T = SNT
 
  = EOL
 Q = SNT
 -> = Flecha
-( = ST
-B = SNT
-| = ST
-D = SNT
-) = ST
-? = ST
+V = SNT
 / = ST
 / = ST
 cuando = ST
@@ -38,7 +43,7 @@ agrupamiento = ST
  = EOL
 E = SNT
 -> = Flecha
-includes = ST
+include = ST
 
  = EOL
 C = SNT

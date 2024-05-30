@@ -144,31 +144,50 @@ namespace GENERADOR
             }
             return false;
         }
+
         private void ListaSimbolos()
         {
+
             if (getClasificacion() == Tipos.ST)
             {
                 lenguaje.WriteLine("            match(\"" + getContenido() + "\");");
                 match(Tipos.ST);
             }
+            else if (getClasificacion() == Tipos.Pipe)
+            {
+                match(Tipos.Pipe);
+                lenguaje.WriteLine("            if (getClasificacion() == Tipos.Pipe)");
+                lenguaje.WriteLine("            {");
+                lenguaje.WriteLine("            match(Tipos.Pipe);");
+                lenguaje.WriteLine("            " + getContenido() + "();");
+                lenguaje.WriteLine("            }");
+                //ListaSimbolos();
+                lenguaje.WriteLine("            else");
+                lenguaje.WriteLine("            {");
+                ListaSimbolos();
+                lenguaje.WriteLine("            }");
+            }
+           
             else
             {
                 if (esTipo(getContenido()))
                 {
                     lenguaje.WriteLine("            match(Tipos." + getContenido() + ");");
+
                 }
                 else
                 {
                     lenguaje.WriteLine("            " + getContenido() + "();");
+
                 }
                 match(Tipos.SNT);
+
             }
+
             if (getClasificacion() == Tipos.SNT || getClasificacion() == Tipos.ST || getClasificacion() == Tipos.Pipe)
             {
                 ListaSimbolos();
             }
-            
         }
-
     }
 }
